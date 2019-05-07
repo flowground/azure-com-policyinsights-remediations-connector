@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "managementGroupsNamespace": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Microsoft.Management"
+            ]
+        },
+        "managementGroupId": {
+            "required": true,
+            "type": "string"
+        },
+        "remediationName": {
+            "required": true,
+            "type": "string"
+        },
+        "_top": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

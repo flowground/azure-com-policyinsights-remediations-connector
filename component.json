@@ -1,0 +1,457 @@
+{
+    "title": "RemediationsClient",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/policyinsights-remediations/2018-07-01-preview/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Remediations_ListForManagementGroup": {
+            "main": "./lib/actions/Remediations_ListForManagementGroup.js",
+            "title": "Gets all remediations for the management group.",
+            "description": "Gets all remediations for the management group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListForManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_DeleteAtManagementGroup": {
+            "main": "./lib/actions/Remediations_DeleteAtManagementGroup.js",
+            "title": "Deletes an existing remediation at management group scope.",
+            "description": "Deletes an existing remediation at management group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_DeleteAtManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_GetAtManagementGroup": {
+            "main": "./lib/actions/Remediations_GetAtManagementGroup.js",
+            "title": "Gets an existing remediation at management group scope.",
+            "description": "Gets an existing remediation at management group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_GetAtManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CreateOrUpdateAtManagementGroup": {
+            "main": "./lib/actions/Remediations_CreateOrUpdateAtManagementGroup.js",
+            "title": "Creates or updates a remediation at management group scope.",
+            "description": "Creates or updates a remediation at management group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CreateOrUpdateAtManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CancelAtManagementGroup": {
+            "main": "./lib/actions/Remediations_CancelAtManagementGroup.js",
+            "title": "Cancels a remediation at management group scope.",
+            "description": "Cancels a remediation at management group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CancelAtManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListDeploymentsAtManagementGroup": {
+            "main": "./lib/actions/Remediations_ListDeploymentsAtManagementGroup.js",
+            "title": "Gets all deployments for a remediation at management group scope.",
+            "description": "Gets all deployments for a remediation at management group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListDeploymentsAtManagementGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListForSubscription": {
+            "main": "./lib/actions/Remediations_ListForSubscription.js",
+            "title": "Gets all remediations for the subscription.",
+            "description": "Gets all remediations for the subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListForSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_DeleteAtSubscription": {
+            "main": "./lib/actions/Remediations_DeleteAtSubscription.js",
+            "title": "Deletes an existing remediation at subscription scope.",
+            "description": "Deletes an existing remediation at subscription scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_DeleteAtSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_GetAtSubscription": {
+            "main": "./lib/actions/Remediations_GetAtSubscription.js",
+            "title": "Gets an existing remediation at subscription scope.",
+            "description": "Gets an existing remediation at subscription scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_GetAtSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CreateOrUpdateAtSubscription": {
+            "main": "./lib/actions/Remediations_CreateOrUpdateAtSubscription.js",
+            "title": "Creates or updates a remediation at subscription scope.",
+            "description": "Creates or updates a remediation at subscription scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CreateOrUpdateAtSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CancelAtSubscription": {
+            "main": "./lib/actions/Remediations_CancelAtSubscription.js",
+            "title": "Cancels a remediation at subscription scope.",
+            "description": "Cancels a remediation at subscription scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CancelAtSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListDeploymentsAtSubscription": {
+            "main": "./lib/actions/Remediations_ListDeploymentsAtSubscription.js",
+            "title": "Gets all deployments for a remediation at subscription scope.",
+            "description": "Gets all deployments for a remediation at subscription scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListDeploymentsAtSubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListForResourceGroup": {
+            "main": "./lib/actions/Remediations_ListForResourceGroup.js",
+            "title": "Gets all remediations for the subscription.",
+            "description": "Gets all remediations for the subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListForResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_DeleteAtResourceGroup": {
+            "main": "./lib/actions/Remediations_DeleteAtResourceGroup.js",
+            "title": "Deletes an existing remediation at resource group scope.",
+            "description": "Deletes an existing remediation at resource group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_DeleteAtResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_GetAtResourceGroup": {
+            "main": "./lib/actions/Remediations_GetAtResourceGroup.js",
+            "title": "Gets an existing remediation at resource group scope.",
+            "description": "Gets an existing remediation at resource group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_GetAtResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CreateOrUpdateAtResourceGroup": {
+            "main": "./lib/actions/Remediations_CreateOrUpdateAtResourceGroup.js",
+            "title": "Creates or updates a remediation at resource group scope.",
+            "description": "Creates or updates a remediation at resource group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CreateOrUpdateAtResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CancelAtResourceGroup": {
+            "main": "./lib/actions/Remediations_CancelAtResourceGroup.js",
+            "title": "Cancels a remediation at resource group scope.",
+            "description": "Cancels a remediation at resource group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CancelAtResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListDeploymentsAtResourceGroup": {
+            "main": "./lib/actions/Remediations_ListDeploymentsAtResourceGroup.js",
+            "title": "Gets all deployments for a remediation at resource group scope.",
+            "description": "Gets all deployments for a remediation at resource group scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListDeploymentsAtResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListForResource": {
+            "main": "./lib/actions/Remediations_ListForResource.js",
+            "title": "Gets all remediations for a resource.",
+            "description": "Gets all remediations for a resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListForResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_DeleteAtResource": {
+            "main": "./lib/actions/Remediations_DeleteAtResource.js",
+            "title": "Deletes an existing remediation at individual resource scope.",
+            "description": "Deletes an existing remediation at individual resource scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_DeleteAtResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_GetAtResource": {
+            "main": "./lib/actions/Remediations_GetAtResource.js",
+            "title": "Gets an existing remediation at resource scope.",
+            "description": "Gets an existing remediation at resource scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_GetAtResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CreateOrUpdateAtResource": {
+            "main": "./lib/actions/Remediations_CreateOrUpdateAtResource.js",
+            "title": "Creates or updates a remediation at resource scope.",
+            "description": "Creates or updates a remediation at resource scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CreateOrUpdateAtResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_CancelAtResource": {
+            "main": "./lib/actions/Remediations_CancelAtResource.js",
+            "title": "Cancel a remediation at resource scope.",
+            "description": "Cancel a remediation at resource scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_CancelAtResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Remediations_ListDeploymentsAtResource": {
+            "main": "./lib/actions/Remediations_ListDeploymentsAtResource.js",
+            "title": "Gets all deployments for a remediation at resource scope.",
+            "description": "Gets all deployments for a remediation at resource scope.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Remediations_ListDeploymentsAtResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
